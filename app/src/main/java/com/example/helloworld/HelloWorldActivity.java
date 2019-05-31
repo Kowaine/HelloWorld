@@ -60,6 +60,7 @@ public class HelloWorldActivity extends AppCompatActivity {
                 break;
             case R.id.github_home_item:
                 viewInBrowser(getResources().getString(R.string.github_home));
+                break;
             case R.id.exit_item:
                 finish();
                 break;
