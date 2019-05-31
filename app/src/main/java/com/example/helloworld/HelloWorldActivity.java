@@ -29,7 +29,8 @@ public class HelloWorldActivity extends AppCompatActivity {
         // 装载菜单项
         getMenuInflater().inflate(R.menu.main, menu);
 
-        MenuView.ItemView item = findViewById(R.id.version);
+        // 只能通过menu间接获取item
+        MenuItem item = menu.findItem(R.id.version);
 
         // 获取版本号
         PackageManager packageManager = getPackageManager();
@@ -40,8 +41,9 @@ public class HelloWorldActivity extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
+        version = "版本号：" + version;
 
-        item.setTitle("版本号：" + version);
+        item.setTitle(version);
 
         return true;
     }
