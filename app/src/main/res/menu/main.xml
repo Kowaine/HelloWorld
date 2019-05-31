@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/github_item"
+        android:id="@+id/github_project_item"
         android:title="@string/open_github_project" />
+    <item
+        android:id="@+id/github_home_item"
+        android:title="@string/open_github_home"/>
     <item
         android:id="@+id/exit_item"
         android:title="@string/exit" />
     <item
-        android:id="@+id/version"
+        android:id="@+id/version_item"
         android:title="" />
 </menu>

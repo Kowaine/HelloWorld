@@ -30,7 +30,7 @@ public class HelloWorldActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
 
         // 只能通过menu间接获取item
-        MenuItem item = menu.findItem(R.id.version);
+        MenuItem item = menu.findItem(R.id.version_item);
 
         // 获取版本号
         PackageManager packageManager = getPackageManager();
@@ -55,11 +55,11 @@ public class HelloWorldActivity extends AppCompatActivity {
         // 判断选择项并响应
         switch(item.getItemId())
         {
-            case R.id.github_item:
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(getResources().getString(R.string.github_project)));
-                startActivity(intent);
+            case R.id.github_project_item:
+                viewInBrowser(getResources().getString(R.string.github_project));
                 break;
+            case R.id.github_home_item:
+                viewInBrowser(getResources().getString(R.string.github_home));
             case R.id.exit_item:
                 finish();
                 break;
@@ -94,36 +94,6 @@ public class HelloWorldActivity extends AppCompatActivity {
         }
     }
 
-
-    public void changeString(View v)
-    {
-        /*按动按键更换字符串*/
-
-        TextView text = findViewById(R.id.hello_world_text);
-        Toast info;
-
-        // 判断文字并切换到另一个
-        if(text.getText() == getResources().getString(R.string.hello_string))
-        {
-            text.setText(R.string.goodbye_string);
-            info = Toast.makeText(HelloWorldActivity.this, R.string.goodbye_string, Toast.LENGTH_SHORT);
-        }
-        else
-        {
-            text.setText(R.string.hello_string);
-            info = Toast.makeText(HelloWorldActivity.this, R.string.hello_string, Toast.LENGTH_SHORT);
-        }
-        info.show();
-    }
-
-    public void openGithubHome(View v)
-    {
-        // 隐式Intent打开浏览器访问github主页
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(getResources().getString(R.string.github_home)));
-        startActivity(intent);
-    }
-
     public void startCalculateActivity(View v)
     {
         /*将两个数字隐式Intent传送*/
@@ -150,5 +120,13 @@ public class HelloWorldActivity extends AppCompatActivity {
 
             startActivityForResult(intent, 0);
         }
+    }
+
+    public void viewInBrowser(String url)
+    {
+        /*隐式Intent打开指定网页*/
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 }

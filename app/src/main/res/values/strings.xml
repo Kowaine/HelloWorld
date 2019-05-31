@@ -1,8 +1,5 @@
 <resources>
-    <string name="app_name">HelloWorld</string>
-    <string name="hello_string">Hello World</string>
-    <string name="button_string">更换语句</string>
-    <string name="goodbye_string">Goodbye World</string>
+    <string name="app_name">简计算</string>
     <string name="open_github_home">访问我的GitHub主页</string>
     <string name="github_home">https://github.com/Kowaine</string>
     <string name="open_github_project">在github上查看本项目</string>
