@@ -6,4 +6,7 @@
     <item
         android:id="@+id/exit_item"
         android:title="exit" />
+    <item
+        android:id="@+id/version"
+        android:title="" />
 </menu>

@@ -2,10 +2,12 @@
     <string name="app_name">HelloWorld</string>
     <string name="hello_string">Hello World</string>
     <string name="button_string">更换语句</string>
-    <string name="changed_string">Goodbye World</string>
+    <string name="goodbye_string">Goodbye World</string>
     <string name="open_browser">访问我的GitHub主页</string>
     <string name="github_home">https://github.com/Kowaine</string>
     <string name="github_project">https://github.com/Kowaine/HelloWorld</string>
-    <string name="change_activity">切换到副活动</string>
+    <string name="change_calculate_activity">切换到计算活动</string>
     <string name="cal_button">计算并返回</string>
+    <string name="null_input">结果不能为空</string>
+    <string name="cal_canceled">计算取消</string>
 </resources>
