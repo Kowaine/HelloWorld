@@ -12,34 +12,43 @@ public class SubActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
-        Log.d("run", "enter SubActivity");
     }
 
     @Override
     public void onBackPressed() {
-        Log.d("run", "enter onBackPressed");
-        Intent get_intent = getIntent();
-        int num1 = get_intent.getIntExtra("num1", 0);
-        int num2 = get_intent.getIntExtra("num2", 0);
+        /*响应返回键*/
         Intent ret_intent = new Intent();
-        ret_intent.putExtra("num1", num1);
-        ret_intent.putExtra("num2", num2);
-        ret_intent.putExtra("result", num1+num2);
-        setResult(RESULT_OK, ret_intent);
+        setResult(RESULT_CANCELED, ret_intent);
         finish();
     }
 
     public void calculate(View v)
     {
-        Log.d("run", "enter calculate");
+        /*计算*/
+
+        // 获取Intent数据
         Intent get_intent = getIntent();
-        int num1 = get_intent.getIntExtra("num1", 0);
-        int num2 = get_intent.getIntExtra("num2", 0);
-        Intent ret_intent = new Intent();
-        ret_intent.putExtra("num1", num1);
-        ret_intent.putExtra("num2", num2);
-        ret_intent.putExtra("result", num1+num2);
-        setResult(RESULT_OK, ret_intent);
-        finish();
+        if(get_intent.hasExtra("num1") && get_intent.hasExtra("num2"))
+        {
+            // 若数据存在则处理
+
+            double num1 = get_intent.getDoubleExtra("num1", 0);
+            double num2 = get_intent.getDoubleExtra("num2", 0);
+
+            // 设置返回数据
+            Intent ret_intent = new Intent();
+            ret_intent.putExtra("num1", num1);
+            ret_intent.putExtra("num2", num2);
+            ret_intent.putExtra("result", num1 + num2);
+
+            setResult(RESULT_OK, ret_intent);
+
+            finish();
+        }
+        else
+        {
+            // 数据不存在则直接返回
+            onBackPressed();
+        }
     }
 }

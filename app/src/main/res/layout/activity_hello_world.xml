@@ -65,7 +65,7 @@
 
     <Button
         android:id="@+id/sub_button2"
-        android:text="@string/open_browser"
+        android:text="@string/open_github_home"
         android:background="@color/colorPrimary"
         android:textColor="@color/white"
         android:onClick="openGithubHome"

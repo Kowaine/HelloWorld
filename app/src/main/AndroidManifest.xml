@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SubActivity">
             <intent-filter>
-                <action android:name="com.example.hellowold.CALCULATE" />
+                <action android:name="com.example.helloworld.CALCULATE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

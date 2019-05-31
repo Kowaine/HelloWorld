@@ -80,9 +80,9 @@ public class HelloWorldActivity extends AppCompatActivity {
                 // 判断返回结果
                 if(resultCode == RESULT_OK)
                 {
-                    Toast.makeText(HelloWorldActivity.this,data.getIntExtra("num1", 0)+"+"
-                            +data.getIntExtra("num2", 0)+"="
-                            +data.getIntExtra("result", 0), Toast.LENGTH_SHORT ).show();
+                    Toast.makeText(HelloWorldActivity.this,data.getDoubleExtra("num1", 0)+"+"
+                            +data.getDoubleExtra("num2", 0)+"="
+                            +data.getDoubleExtra("result", 0), Toast.LENGTH_SHORT ).show();
                 }
                 else if(resultCode == RESULT_CANCELED)
                 {
@@ -140,11 +140,11 @@ public class HelloWorldActivity extends AppCompatActivity {
         {
             // 正常传输数据
 
-            int num1 = Integer.parseInt(num_string1);
-            int num2 = Integer.parseInt(num_string2);
+            double num1 = Double.parseDouble(num_string1);
+            double num2 = Double.parseDouble(num_string2);
 
             // 设置Intent参数
-            Intent intent = new Intent("com.example.hellowold.CALCULATE");
+            Intent intent = new Intent("com.example.helloworld.CALCULATE");
             intent.putExtra("num1", num1);
             intent.putExtra("num2", num2);
 

@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/github_item"
-        android:title="github上查看" />
+        android:title="@string/open_github_project" />
     <item
         android:id="@+id/exit_item"
-        android:title="exit" />
+        android:title="@string/exit" />
     <item
         android:id="@+id/version"
         android:title="" />
