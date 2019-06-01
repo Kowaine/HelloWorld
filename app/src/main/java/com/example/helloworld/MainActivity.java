@@ -8,7 +8,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        /*进程创建*/
+        /*活动创建*/
         Log.d("DEMO", "onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -16,14 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
-        /*进程启动*/
+        /*活动启动*/
         Log.d("DEMO", "onStart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
-        /*进程准备完毕，开始与用户交互*/
+        /*活动准备完毕，开始与用户交互*/
         Log.d("DEMO", "onResume");
         super.onResume();
     }
