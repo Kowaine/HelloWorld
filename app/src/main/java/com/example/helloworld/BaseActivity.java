@@ -76,6 +76,7 @@ public class BaseActivity extends AppCompatActivity {
         Log.d("DEMO", actName + " finish");
         super.finish();
     }
+
 }
 
 class ActCollector

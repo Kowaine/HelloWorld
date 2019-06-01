@@ -1,9 +1,9 @@
 package com.example.helloworld;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
 
 public class SubActivity extends BaseActivity {
@@ -34,4 +34,10 @@ public class SubActivity extends BaseActivity {
         outState.putString("input_text", inputText);
     }
 
+    public static void actionStart(Context context)
+    {
+        /*显式的启动方法*/
+        Intent intent = new Intent(context, SubActivity.class);
+        context.startActivity(intent);
+    }
 }

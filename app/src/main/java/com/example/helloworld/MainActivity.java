@@ -1,7 +1,7 @@
 package com.example.helloworld;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,5 +22,12 @@ public class MainActivity extends BaseActivity {
         Log.d("DEMO", actName + " onSwitch");
         Intent intent = new Intent("com.example.helloworld.DIALOG");
         startActivity(intent);
+    }
+
+    public static void actionStart(Context context)
+    {
+        /*显式的启动方法*/
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
     }
 }
